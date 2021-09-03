@@ -9,7 +9,7 @@ module.exports = (app) => {
 
   app.get("/orders", async (req, res) => {
     const threeDaysAgo = new Date();
-    threeDaysAgo.setDate(threeDaysAgo.getDate() - 13);
+    threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
     const orderResponse = await Order.find({
       created_on: { $gte: threeDaysAgo },
     });
