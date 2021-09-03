@@ -38,6 +38,7 @@ function ChallengeCtrl($http, $scope) {
       return res.data;
     });
   };
+
   getOrders();
   console.log("Controller loaded!");
   cCtrl.welcomeMessage = "Order Tracking";
