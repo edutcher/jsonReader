@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="Challenge">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Challenge App</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/controller.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+
+  <body ng-controller="ChallengeController as cCtrl">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>{{cCtrl.welcomeMessage}}</h1>
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="order in orders">
+				<button type="button" class="btn btn-default" id={{order._id}} ng-click="getTrackingInfo($event)">Tracking Number: {{order.tracking_number}}</span>
+			</li>
+		</ul>
+<div>
+	<h2>Tracking Number: {{tracking}}</h2>
+	<h4>Tracking Link: <a href={{link}}> {{link}}</a></h4>
+	<h5>Shipped on: {{shipDate}} via: {{shipMethod}}</h5>
+	<h5>Estimated Delivery: {{delivery}}</h5>
+</div>
+    </div>
+  </body>
+</html>
